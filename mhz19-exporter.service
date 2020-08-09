@@ -1,0 +1,14 @@
+[Unit]
+Description=MHZ19 exporter for Prometheus
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 exporter.py
+WorkingDirectory=/home/pi/git/mhz19-exporter
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
